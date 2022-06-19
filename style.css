@@ -1,89 +1,118 @@
-@import url(https://fonts.googleapis.com/css?family=Chewy);
+/* @import url(https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Pacifico&display=swap); */
+@import url(https://fonts.googleapis.com/css2?family=Fascinate&family=Pacifico&display=swap);
+
 body {
-  color: #fff;
-  background: #000;
+    color: #fff;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    margin: 10% auto;
 }
+
 p {
-  text-align: center;
-  font-size: 60px;
-  margin: 5px;
-  font-family: "Chewy";
+    text-align: center;
+    font-size: 60px;
+    margin: 5px;
+    font-family: "Pacifico";
 }
+.title {
+    font-family: Fascinate;
+    text-transform: capitalize;
+}
+
+.small-title {
+    font-size: 30px;
+    margin: 0;
+}
+
 .box:before {
-  content: "";
-  background: darkgrey;
-  position: absolute;
-  z-index: 10;
-  top: 43px;
-  left: 0;
-  width: 80px;
-  height: 2px;
-  border-bottom: 1px solid #fff;
+    content: "";
+    background: darkgrey;
+    position: absolute;
+    z-index: 10;
+    top: 43px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    border-bottom: 1px solid #fff;
 }
+
 .box {
-  font-family: "Verdana, Geneva, sans-serif" !important;
-  margin: 0 5px;
-  padding: 10px;
-  position: relative;
-  /*float: left;*/
-  width: 60px;
-  height: 86px;
-  font-size: 60px;
-  line-height: 86px;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  color: #555555;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ebebeb+0,ebebeb+50,ffffff+51,f8f8f8+100 */
-  background: rgb(235, 235, 235); /* Old browsers */
-  background: -moz-linear-gradient(
-    top,
-    rgba(235, 235, 235, 1) 0%,
-    rgba(235, 235, 235, 1) 50%,
-    rgba(255, 255, 255, 1) 51%,
-    rgba(248, 248, 248, 1) 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    top,
-    rgba(235, 235, 235, 1) 0%,
-    rgba(235, 235, 235, 1) 50%,
-    rgba(255, 255, 255, 1) 51%,
-    rgba(248, 248, 248, 1) 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    rgba(235, 235, 235, 1) 0%,
-    rgba(235, 235, 235, 1) 50%,
-    rgba(255, 255, 255, 1) 51%,
-    rgba(248, 248, 248, 1) 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#f8f8f8',GradientType=0 ); /* IE6-9 */
+    font-family: "Verdana, Geneva, sans-serif" !important;
+    margin: 0 5px;
+    padding: 10px;
+    position: relative;
+    font-size: 60px;
+    line-height: 86px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    color: #555555;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ebebeb+0,ebebeb+50,ffffff+51,f8f8f8+100 */
+    background: rgb(235, 235, 235); /* Old browsers */
+    background: -moz-linear-gradient(
+        top,
+        rgba(235, 235, 235, 1) 0%,
+        rgba(235, 235, 235, 1) 50%,
+        rgba(255, 255, 255, 1) 51%,
+        rgba(248, 248, 248, 1) 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+        top,
+        rgba(235, 235, 235, 1) 0%,
+        rgba(235, 235, 235, 1) 50%,
+        rgba(255, 255, 255, 1) 51%,
+        rgba(248, 248, 248, 1) 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+        to bottom,
+        rgba(235, 235, 235, 1) 0%,
+        rgba(235, 235, 235, 1) 50%,
+        rgba(255, 255, 255, 1) 51%,
+        rgba(248, 248, 248, 1) 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#f8f8f8',GradientType=0 ); /* IE6-9 */
 }
 small {
-  display: block;
-  clear: both;
-  font-size: 12px;
-  line-height: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  padding-top: 13px;
+    display: block;
+    clear: both;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 13px;
 }
-#Days,
-#Hours,
-#Minutes,
-#Seconds {
-  float: left;
-  margin: 0px;
-}
+
 .time-content {
-  width: 40%;
-  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
 }
-.time-content p {
-  width: calc(97% / 4);
+
+.time-content.timer-ready {
+    visibility: visible;
 }
-#dateEnd,
-#action {
-  display: block;
-  margin: 0 auto;
+
+@media only screen and (max-width: 420px) {
+    .box {
+        font-size: 40px;
+    }
+
+    .box:before {
+        width: 60px;
+        top: 30px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .box {
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+    .box:before {
+        width: 34px;
+        top: 18px;
+        height: 1px;
+    }
 }
