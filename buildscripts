@@ -1,0 +1,2 @@
+npx parcel build index.html --public-url https://simsib.github.io/jonines-pas-vida-2022/
+git push origin :gh-pages && git subtree push --prefix dist origin gh-pages
